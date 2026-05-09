@@ -1,0 +1,18 @@
+{
+  "build": {
+    "production": {
+      "android": {
+        "buildType": "app-bundle",
+        "autoIncrement": true,
+        "gradleCommand": ":app:bundleRelease"
+      },
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  },
+  "cli": {
+    "version": ">= 7.4.0",
+    "appVersionSource": "remote"
+  }
+}

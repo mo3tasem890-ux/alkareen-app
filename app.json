@@ -1,0 +1,66 @@
+{
+  "expo": {
+    "name": "الكرين",
+    "slug": "vehicle-finder-app",
+    "version": "1.6.8",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yourname.vehiclefinder",
+      "buildNumber": "1.6.8"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.yourname.vehiclefinder",
+      "permissions": [
+        "CAMERA",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ],
+      "versionCode": 25
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "يحتاج التطبيق إلى الوصول إلى الصور لمشاركتها مع المستخدمين الآخرين.",
+          "cameraPermission": "يحتاج التطبيق إلى الوصول إلى الكاميرا لالتقاط صور المركبات."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "السماح للتطبيق باستخدام موقعك لعرض مواقع المركبات على الخريطة."
+        }
+      ],
+      [
+        "react-native-google-mobile-ads",
+        {
+          "androidAppId": "ca-app-pub-9786509260696261~8076087718",
+          "iosAppId": "ca-app-pub-3940256099942544~1458002511"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "c81119a3-46ff-4666-b34a-0158da2b9603"
+      }
+    },
+    "runtimeVersion": "1.6.8"
+  }
+}

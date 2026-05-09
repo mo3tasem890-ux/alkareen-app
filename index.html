@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alkreen - الكرين لبيع وشراء السيارات</title>
+    <meta name="description" content="تطبيق الكرين هو وجهتك الأولى لبيع وشراء السيارات بأفضل الأسعار وأسهل الطرق.">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Cairo:wght@400;600;700&display=swap" rel=" Cairo">
+    <style>
+        :root {
+            --primary: #0070eb;
+            --bg-dark: #f6faff;
+            --card-bg: #ffffff;
+            --text-dark: #101d26;
+            --text-dim: #75777e;
+            --accent-gradient: linear-gradient(135deg, #0070eb 0%, #0058bc 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: radial-gradient(circle at center, #ffffff 0%, #f6faff 100%);
+        }
+
+        .hero {
+            text-align: center;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .logo-container {
+            margin-bottom: 30px;
+        }
+
+        .logo-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(0, 112, 235, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p.tagline {
+            font-size: 1.5rem;
+            color: var(--text-dim);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .btn-primary {
+            background: var(--accent-gradient);
+            color: #fff;
+            box-shadow: 0 10px 20px rgba(0, 112, 235, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 112, 235, 0.5);
+        }
+
+        .btn-outline:hover {
+            background: rgba(240, 195, 60, 0.1);
+            transform: translateY(-3px);
+        }
+
+        @keyframes breathe {
+            0% { transform: scale(1); box-shadow: 0 20px 40px rgba(0, 112, 235, 0.15); }
+            50% { transform: scale(1.05); box-shadow: 0 25px 50px rgba(0, 112, 235, 0.25); }
+            100% { transform: scale(1); box-shadow: 0 20px 40px rgba(0, 112, 235, 0.15); }
+        }
+
+        .logo-img {
+            animation: breathe 4s ease-in-out infinite;
+        }
+
+        .btn-primary {
+            animation: breathe 3s ease-in-out infinite;
+        }
+
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid #222;
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            margin-top: 10px;
+        }
+
+        .footer-links a {
+            color: var(--primary);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            p.tagline { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="hero">
+                <div class="logo-container">
+                    <img src="assets/icon.png" alt="Alkreen Logo" class="logo-img">
+                </div>
+                <h1>تطبيق الكرين</h1>
+                <p class="tagline">سوق السيارات المتكامل في جيبك. بيع وشراء بكل سهولة وأمان.</p>
+                <div class="cta-group">
+                    <a href="#" class="btn btn-primary">تحميل التطبيق قريباً</a>
+                    <a href="app-ads.txt" class="btn btn-outline">ملف المطورين (ads.txt)</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Alkreen. جميع الحقوق محفوظة.</p>
+            <div class="footer-links">
+                <a href="app-ads.txt" id="ads-link">app-ads.txt</a>
+                <a href="#">سياسة الخصوصية</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

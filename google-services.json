@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "422837108314",
+    "project_id": "al-kreen",
+    "storage_bucket": "al-kreen.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422837108314:android:bf7e05aef67b046a28a263",
+        "android_client_info": {
+          "package_name": "com.yourname.vehiclefinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "422837108314-s7vljs04kf1o046cgbmttf44me1tq5s3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.yourname.vehiclefinder",
+            "certificate_hash": "cf4343a33663a14ab77b75960d206a0c754e9cb5"
+          }
+        },
+        {
+          "client_id": "422837108314-djmuojb8il5777ob8td6j518ssprhfp8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5H-WeEu0bRNZOsMZ4aawCmTXAFh71GmQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "422837108314-70af8j0rp2062g6bjjm91k28bvbmpaae.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
