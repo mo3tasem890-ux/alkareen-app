@@ -137,6 +137,14 @@ function MainApp() {
   // Optimized Breathing Animation
   const fabAnim = useRef(new Animated.Value(1)).current;
 
+  const flatListRef = useRef(null);
+
+  useEffect(() => {
+    if (flatListRef.current) {
+      flatListRef.current.scrollToOffset({ offset: 0, animated: false });
+    }
+  }, [tab]);
+
   const [postLimit, setPostLimit] = useState(20);
   const [myDeviceId, setMyDeviceId] = useState(null);
   const [ownedPostIds, setOwnedPostIds] = useState(new Set());
@@ -170,14 +178,22 @@ function MainApp() {
   // Initialize Mobile Ads and Request Consent
   useEffect(() => {
     const initializeAds = async () => {
+      // 1. Try to handle GDPR consent request (does not block initialization on failure)
       try {
         const consentInfo = await AdsConsent.requestInfoUpdate();
         if (consentInfo.isConsentFormAvailable && consentInfo.status === 'REQUIRED') {
           await AdsConsent.showForm();
         }
+      } catch (consentError) {
+        console.log('Consent flow skipped/failed:', consentError);
+      }
+
+      // 2. Always initialize mobileAds
+      try {
         await mobileAds().initialize();
+        console.log('Google Mobile Ads initialized successfully');
       } catch (e) {
-        console.log('Ads initialization failed', e);
+        console.log('Ads initialization failed:', e);
       }
     };
     initializeAds();
@@ -998,6 +1014,7 @@ function MainApp() {
 
         {/* 2. Scrollable Content */}
         <FlatList
+          ref={flatListRef}
           onTouchStart={closeMenus}
           data={loading ? [1, 2, 3] : displayList}
           keyExtractor={(item, index) => loading ? `skeleton-${index}` : item.uniqueKey}
@@ -1378,15 +1395,27 @@ const SkeletonCard = React.memo(() => {  const animatedValue = useRef(new Animat
 
 // Bottom Banner Ad Component
 const BottomBannerAd = React.memo(() => {
+  const [loaded, setLoaded] = useState(false);
+  const [failed, setFailed] = useState(false);
+
+  // Set real Ad Unit ID for production, and use TestIds.BANNER for development
+  const adUnitId = __DEV__ ? TestIds.BANNER : 'ca-app-pub-2559389808587750/7889359222';
+
+  if (failed) return null;
+
   return (
-    <View style={styles.bottomAdContainer}>
+    <View style={[styles.bottomAdContainer, !loaded && { height: 0, paddingVertical: 0, borderTopWidth: 0 }]}>
       <BannerAd
-        unitId={TestIds.BANNER}
+        unitId={adUnitId}
         size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
         requestOptions={{
           requestNonPersonalizedAdsOnly: true,
         }}
-        onAdFailedToLoad={(error) => console.log('Banner failed to load: ', error)}
+        onAdLoaded={() => setLoaded(true)}
+        onAdFailedToLoad={(error) => {
+          console.log('Banner failed to load: ', error);
+          setFailed(true);
+        }}
       />
     </View>
   );

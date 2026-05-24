@@ -2,7 +2,7 @@
   "expo": {
     "name": "الكرين",
     "slug": "vehicle-finder-app",
-    "version": "1.6.8",
+    "version": "1.6.9",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -17,7 +17,7 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.yourname.vehiclefinder",
-      "buildNumber": "1.6.8"
+      "buildNumber": "1.6.9"
     },
     "android": {
       "adaptiveIcon": {
@@ -32,7 +32,7 @@
         "READ_EXTERNAL_STORAGE",
         "WRITE_EXTERNAL_STORAGE"
       ],
-      "versionCode": 25
+      "versionCode": 28
     },
     "plugins": [
       [
@@ -51,7 +51,7 @@
       [
         "react-native-google-mobile-ads",
         {
-          "androidAppId": "ca-app-pub-9786509260696261~8076087718",
+          "androidAppId": "ca-app-pub-2559389808587750~9607811170",
           "iosAppId": "ca-app-pub-3940256099942544~1458002511"
         }
       ]
@@ -61,6 +61,6 @@
         "projectId": "c81119a3-46ff-4666-b34a-0158da2b9603"
       }
     },
-    "runtimeVersion": "1.6.8"
+    "runtimeVersion": "1.6.9"
   }
 }
